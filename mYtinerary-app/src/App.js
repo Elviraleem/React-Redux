@@ -1,21 +1,7 @@
 import React, {Component} from 'react';
+import Member from "./components/Member"
 
-class Member extends Component {
-    
-        render() {
-            return (
-                <div>
-                    {this.props.members.map(member => {
-                      return (
-                        <div key={member.id}>
-                        <h1>{member.name}</h1>
-                        <img src={member.img} alt="img"></img>
-                        </div> )          
-                        })
-                      }
-                </div>
-            )}
-    }
+
 
 class App extends Component {
     constructor() {
@@ -25,10 +11,14 @@ class App extends Component {
             members: []
         }
     }
-    toggleHidden () {
+    toggleHidden = ()=> {
         this.setState({
             isHidden: !this.state.isHidden
           })
+        }
+
+        sayHi = ()=> {
+console.log("Hola")
         }
   
     componentDidMount() {
@@ -58,12 +48,12 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-            <button onClick={this.toggleHidden.bind(this)}>Hidden</button>
-                    {!this.state.isHidden && <Member />}
-                <ul>
+            <button onClick={this.toggleHidden}>Hidden</button>
+                    {this.state.isHidden ? <Member members={this.state.members}/> : null}
+               
+              <button onClick={this.sayHi}>SayHu</button>      
                     
-                    <Member members={this.state.members}/>
-                </ul>
+              
             </div>
         );
     }
