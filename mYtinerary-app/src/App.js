@@ -1,63 +1,37 @@
 import React, {Component} from 'react';
 import Member from "./components/Member"
 
-
-
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            isHidden: true,
-            members: []
-        }
-    }
-    toggleHidden = ()=> {
-        this.setState({
-            isHidden: !this.state.isHidden
-          })
-        }
-
-        sayHi = ()=> {
-console.log("Hola")
-        }
-  
-    componentDidMount() {
-        this.setState({
-            members: [
-                {
-                    id: 1,
-                    name: "Luke Williams",
-                    img: "./pictures/LukeWilliams.png"
-                }, {
-                    id: 2,
-                    name: "Martin Wright",
-                    img: "./pictures/MartinWright.png"
-                }, {
-                    id: 3,
-                    name: "Sabrina Miller",
-                    img: "./pictures/SabrinaMiller.png"
-                }, {
-                    id: 4,
-                    name: "Sai Patel",
-                    img: "./pictures/SaiPatel.png"
-                }
-            ]
-        });
-    }
-
     render() {
         return (
             <div className="App">
-            <button onClick={this.toggleHidden}>Hidden</button>
-                    {this.state.isHidden ? <Member members={this.state.members}/> : null}
-               
-              <button onClick={this.sayHi}>SayHu</button>      
-                    
-              
+                <div className="home">
+                    <div className="logo-title">
+                        <img src="./pictures/MYtineraryLogo.png"></img>
+                        <p>Find your perfect trip, designed by insiders who know and love their cities.</p>
+                    </div>
+                    <div className="start">
+                        <h2>Start browsing</h2>
+                        <img src="./pictures/circled-right-2.png"></img>
+
+                    </div>
+                    <div className="user-profile">
+                        <p>Want to build your own MYtinerary?</p>
+                        <div className="login-account">
+                            <a href="#">Log in</a>
+                            <a href="#">Create Account</a>
+                        </div>
+
+                    </div>
+                    <div className="logo-home">
+                        <img src="./pictures/homeIcon.png"></img>
+                    </div>
+
+                </div>
             </div>
+
         );
     }
 }
-
 
 export default App;
