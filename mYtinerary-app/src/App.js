@@ -1,37 +1,30 @@
-import React, {Component} from 'react';
-import Member from "./components/Member"
+import React, { Component } from "react";
+import {
+  Route,
+  NavLink,
+  BrowserRouter as Router,
+  Switch
+} from "react-router-dom";
+import LandingPage1 from "./components/LandingPage1";
+import Cities from "./components/Cities";
+import LogIn from "./components/LogIn";
+import SignUp from "./components/SignUp";
 
 class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <div className="home">
-                    <div className="logo-title">
-                        <img src="./pictures/MYtineraryLogo.png"></img>
-                        <p>Find your perfect trip, designed by insiders who know and love their cities.</p>
-                    </div>
-                    <div className="start">
-                        <h2>Start browsing</h2>
-                        <img src="./pictures/circled-right-2.png"></img>
-
-                    </div>
-                    <div className="user-profile">
-                        <p>Want to build your own MYtinerary?</p>
-                        <div className="login-account">
-                            <a href="#">Log in</a>
-                            <a href="#">Create Account</a>
-                        </div>
-
-                    </div>
-                    <div className="logo-home">
-                        <img src="./pictures/homeIcon.png"></img>
-                    </div>
-
-                </div>
-            </div>
-
-        );
-    }
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <div>
+            <Route path="/" component={LandingPage1} />
+            <Route path="/cities" component={Cities} />
+            <Route path="/LogIn" component={LogIn} />
+            <Route path="/SignUp" component={SignUp} />
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
