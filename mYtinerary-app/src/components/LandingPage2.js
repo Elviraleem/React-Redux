@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { NavLink as Link } from "react-router-dom";
 import SimpleMenu from "./SimpleMenu";
-import BurgerMenu from "./Burger-menu";
+import BurgerMenu from "./BurgerMenu";
 
 export class LandingPage2 extends Component {
   render() {

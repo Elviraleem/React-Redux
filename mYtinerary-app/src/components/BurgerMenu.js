@@ -7,7 +7,7 @@ export class BurgerMenu extends Component {
   }
   render() {
     return (
-      <Menu>
+      <Menu right>
         <a id="home" className="menu-item" href="/">
           Home
         </a>
