@@ -10,6 +10,7 @@
     "i": "^0.3.6",
     "npm": "^6.9.0",
     "react": "^16.8.3",
+    "react-burger-menu": "^2.6.5",
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
     "react-simple-dropdown": "^3.2.3"

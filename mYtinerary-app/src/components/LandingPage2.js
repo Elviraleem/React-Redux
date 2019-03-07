@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import { NavLink as Link } from "react-router-dom";
 import SimpleMenu from "./SimpleMenu";
+import BurgerMenu from "./Burger-menu";
 
 export class LandingPage2 extends Component {
   render() {
     return (
       <div>
         <SimpleMenu />
+        <BurgerMenu />
         <div className="logo-title">
           <img src="./pictures/MYtineraryLogo.png" alt="logo" />
           <p>
