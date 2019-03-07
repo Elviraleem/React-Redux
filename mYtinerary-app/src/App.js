@@ -1,63 +1,29 @@
-import React, {Component} from 'react';
-import Member from "./components/Member"
+import React, { Component } from "react";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faIgloo } from "@fortawesome/free-solid-svg-icons";
+import { Route, BrowserRouter as Router } from "react-router-dom";
+import LandingPage2 from "./components/LandingPage2";
+import Cities from "./components/Cities";
+import LogIn from "./components/LogIn";
+import SignUp from "./components/SignUp";
 
-
+library.add(faIgloo);
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            isHidden: true,
-            members: []
-        }
-    }
-    toggleHidden = ()=> {
-        this.setState({
-            isHidden: !this.state.isHidden
-          })
-        }
-
-        sayHi = ()=> {
-console.log("Hola")
-        }
-  
-    componentDidMount() {
-        this.setState({
-            members: [
-                {
-                    id: 1,
-                    name: "Luke Williams",
-                    img: "./pictures/LukeWilliams.png"
-                }, {
-                    id: 2,
-                    name: "Martin Wright",
-                    img: "./pictures/MartinWright.png"
-                }, {
-                    id: 3,
-                    name: "Sabrina Miller",
-                    img: "./pictures/SabrinaMiller.png"
-                }, {
-                    id: 4,
-                    name: "Sai Patel",
-                    img: "./pictures/SaiPatel.png"
-                }
-            ]
-        });
-    }
-
-    render() {
-        return (
-            <div className="App">
-            <button onClick={this.toggleHidden}>Hidden</button>
-                    {this.state.isHidden ? <Member members={this.state.members}/> : null}
-               
-              <button onClick={this.sayHi}>SayHu</button>      
-                    
-              
-            </div>
-        );
-    }
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <div>
+            <Route exact path="/" component={LandingPage2} />
+            <Route path="/Cities" component={Cities} />
+            <Route path="/LogIn" component={LogIn} />
+            <Route path="/SignUp" component={SignUp} />
+          </div>
+        </Router>
+      </div>
+    );
+  }
 }
-
 
 export default App;
