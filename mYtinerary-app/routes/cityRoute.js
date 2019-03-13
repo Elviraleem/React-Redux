@@ -2,10 +2,12 @@ const express = require("express");
 const router = express.Router();
 const cityModel = require("../models/City");
 
+// get a list of cities from the database
 router.get("/", (req, res) => {
   cityModel.find().then(cities => res.json(cities));
 });
 
+// add a new city in the database
 router.post("/", (req, res) => {
   // var cityModel = new CityModel(req.body);
   // cityModel.save();
@@ -19,6 +21,18 @@ router.post("/", (req, res) => {
     .catch(next);
   // cityModel.create(req.body).then(cities => res.send(cities);
   // });
+});
+
+// update a city in the database
+router.put("/:id", function(req, res, next) {
+  res.send({ type: "PUT" });
+});
+
+// delete a city from the database
+router.delete("/:id", function(req, res, next) {
+  cityModel.findByIdAndRemove({ _id: req.params.id }).then(function(city) {
+    res.send(city);
+  });
 });
 
 module.exports = router;
