@@ -25,7 +25,13 @@ router.post("/", (req, res) => {
 
 // update a city in the database
 router.put("/:id", function(req, res, next) {
-  res.send({ type: "PUT" });
+  cityModel
+    .findByIdAndUpdate({ _id: req.params.id }, req.body)
+    .then(function() {
+      cityModel.findOne({ _id: req.params.id }).then(function(city) {
+        res.send(city);
+      });
+    });
 });
 
 // delete a city from the database
