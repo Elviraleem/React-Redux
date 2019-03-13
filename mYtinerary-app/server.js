@@ -15,7 +15,13 @@ mongoose
 
 app.use(bodyParser.json());
 
+// Middleware which initialize the routes
 app.use("/cities", cityRoute);
+
+// error handling middleware.
+app.use(function(err, req, res, next) {
+  res.status(422).send({ error: err.message });
+});
 // app.get("/", (req, res) => res.send());
 // app.get("/test", (req, res) => res.send("Test works"));
 
