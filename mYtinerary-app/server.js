@@ -1,6 +1,7 @@
 let express = require("express");
 let mongoose = require("mongoose");
 const cityRoute = require("./routes/cityRoute");
+const bodyParser = require("body-parser");
 
 var app = express();
 
@@ -11,6 +12,8 @@ mongoose
   )
   .then(() => console.log("Connection Done!"))
   .catch(err => console.log("Error", err));
+
+app.use(bodyParser.json());
 
 app.use("/cities", cityRoute);
 // app.get("/", (req, res) => res.send());
