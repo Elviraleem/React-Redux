@@ -1,20 +1,28 @@
 let express = require("express");
 let mongoose = require("mongoose");
-const cityRoute = require("./routes/cityRoute");
+const cityRoute = require("./routes/api/cityRoute");
 const bodyParser = require("body-parser");
 
 var app = express();
 
+// DB Config
+const db = require("./config/keys").mongoURI;
+
+// Connect with mongoDB
 mongoose
-  .connect(
-    "mongodb+srv://elviramern:qJ2SLhpLNtbfo7H3@mytinerary-lr4ho.mongodb.net/CRUD?retryWrites=true",
-    { useNewUrlParser: true }
-  )
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connection Done!"))
   .catch(err => console.log("Error", err));
 
-app.use(bodyParser.json());
+// mongoose
+//   .connect(
+//     "mongodb+srv://elviramern:qJ2SLhpLNtbfo7H3@mytinerary-lr4ho.mongodb.net/CRUD?retryWrites=true",
+//     { useNewUrlParser: true }
+//   )
+//   .then(() => console.log("Connection Done!"))
+//   .catch(err => console.log("Error", err));
 
+app.use(bodyParser.json());
 // Middleware which initialize the routes
 app.use("/cities", cityRoute);
 
@@ -28,5 +36,7 @@ app.use(function(err, req, res, next) {
 /*app.get("/", function(req, res) { 
   res.send("HELLO WORLD");
 });*/
+
 const port = process.env.PORT || 5000;
+
 app.listen(port, () => console.log(`Server running on port ${port}`));

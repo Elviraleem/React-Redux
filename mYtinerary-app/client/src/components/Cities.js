@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-export default class Cities extends Component {
+class Cities extends Component {
   constructor() {
     super();
     this.state = {
@@ -29,3 +29,5 @@ export default class Cities extends Component {
     );
   }
 }
+
+export default Cities;

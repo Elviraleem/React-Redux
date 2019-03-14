@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const cityModel = require("../models/City");
+const cityModel = require("../../models/City");
 
 // get a list of cities from the database
 router.get("/", (req, res) => {
