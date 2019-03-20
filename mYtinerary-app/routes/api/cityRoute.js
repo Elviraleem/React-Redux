@@ -31,14 +31,18 @@ router.put("/:id", function(req, res, next) {
       cityModel.findOne({ _id: req.params.id }).then(function(city) {
         res.send(city);
       });
-    });
+    })
+    .catch(next);
 });
 
 // delete a city from the database
 router.delete("/:id", function(req, res, next) {
-  cityModel.findByIdAndRemove({ _id: req.params.id }).then(function(city) {
-    res.send(city);
-  });
+  cityModel
+    .findByIdAndRemove({ _id: req.params.id })
+    .then(function(city) {
+      res.send(city);
+    })
+    .catch(next);
 });
 
 module.exports = router;

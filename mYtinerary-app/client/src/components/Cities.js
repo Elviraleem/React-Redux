@@ -5,6 +5,18 @@ import { connect } from "react-redux";
 import { fetchCities } from "../actions/citiesAction";
 
 class Cities extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      search: ""
+    };
+  }
+  updateSearch = e => {
+    this.setState({
+      search: e.target.value
+    });
+  };
   componentDidMount() {
     console.log("IN");
     this.props.fetchCities();
@@ -19,11 +31,24 @@ class Cities extends Component {
   }
 
   render() {
+    let filteredCities = this.props.countries.filter(city => {
+      return city.name
+        .toLowerCase()
+        .includes(this.state.search.toLocaleLowerCase());
+    });
     return (
       <div>
         <Header />
+        <div className="inputSearch">
+          <input
+            type="text"
+            value={this.state.search}
+            onChange={this.updateSearch}
+          />
+        </div>
         <div className="allCities">
-          {this.props.cities.cities.map((city, index) => {
+          <Link to="/Cities/:id" />
+          {filteredCities.map((city, index) => {
             return (
               <div className="oneCity" key={index}>
                 {city.name}
@@ -42,7 +67,7 @@ class Cities extends Component {
 }
 
 const mapStateToProps = state => ({
-  cities: state.cityReducer
+  countries: state.cityReducer.cities
 });
 
 export default connect(
