@@ -15,7 +15,12 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "mongodb": "^3.1.13",
-    "mongoose": "^5.4.19"
+    "mongoose": "^5.4.19",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

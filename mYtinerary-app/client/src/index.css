@@ -156,3 +156,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
 a:-webkit-any-link {
   text-decoration: none;
 }
+
+/*  Cities   */
+
+.allCities {
+  align-items: center;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  height: 70vh;
+}
+.oneCity {
+  padding: 10px;
+}
