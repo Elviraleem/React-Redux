@@ -5,19 +5,25 @@ const ItinerarySchema = new Schema({
   title: {
     type: String
   },
-  profilePic: {
+  profileImage: {
+    type: String
+  },
+  profileName: {
     type: String
   },
   rating: {
     type: Number
   },
-  duration: {
+  hours: {
     type: Number
   },
-  price: {
+  cost: {
     type: Number
   },
-  hashtag: {
+  cityName: {
+    type: String
+  },
+  hashtags: {
     type: Array
   }
 });

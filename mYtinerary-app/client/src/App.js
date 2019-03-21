@@ -13,6 +13,7 @@ class App extends Component {
           <div>
             <Route exact path="/" component={LandingPage2} />
             <Route path="/Cities" component={Cities} />
+            <Route path="/Cities/:cityName" component={Cities} />
             <Route path="/LogIn" component={LogIn} />
             <Route path="/SignUp" component={SignUp} />
           </div>

@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
 });
 
 // add a new city in the database
-router.post("/", (req, res) => {
+router.post("/", (req, res, next) => {
   // var cityModel = new CityModel(req.body);
   // cityModel.save();
 
@@ -20,7 +20,7 @@ router.post("/", (req, res) => {
     })
     .catch(next);
   // cityModel.create(req.body).then(cities => res.send(cities);
-  // });
+  // }).catch(next);
 });
 
 // update a city in the database

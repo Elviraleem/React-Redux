@@ -47,12 +47,11 @@ class Cities extends Component {
           />
         </div>
         <div className="allCities">
-          <Link to="/Cities/:id" />
           {filteredCities.map((city, index) => {
             return (
-              <div className="oneCity" key={index}>
-                {city.name}
-              </div>
+              <Link to={"/Cities/" + city.name} key={index}>
+                <div className="oneCity">{city.name}</div>
+              </Link>
             );
           })}
         </div>
