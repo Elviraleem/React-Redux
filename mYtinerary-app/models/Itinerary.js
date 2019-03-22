@@ -18,7 +18,7 @@ const ItinerarySchema = new Schema({
     type: Number
   },
   cost: {
-    type: Number
+    type: String
   },
   cityName: {
     type: String
@@ -28,5 +28,5 @@ const ItinerarySchema = new Schema({
   }
 });
 
-const Itinerary = mongoose.model("itinerary", ItinerarySchema);
+const Itinerary = mongoose.model("itineraries", ItinerarySchema);
 module.exports = Itinerary;
