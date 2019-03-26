@@ -28,6 +28,7 @@ app.use(bodyParser.json());
 app.use("/cities", cityRoute);
 app.use("/itineraries", itineraryRoute);
 // error handling middleware.
+app.use("/Cities/uploads", express.static("uploads"));
 app.use(function(err, req, res, next) {
   res.status(422).send({ error: err.message });
 });

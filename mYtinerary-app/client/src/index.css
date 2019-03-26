@@ -182,3 +182,14 @@ input {
   width: 50%;
   height: 25px;
 }
+
+/*  Itinerary Details component   */
+
+.itinerariesList {
+  padding: 20px;
+}
+
+.profile .card-image {
+  width: 80px;
+  border-radius: 40px;
+}

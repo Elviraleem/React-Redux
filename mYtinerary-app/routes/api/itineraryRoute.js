@@ -32,16 +32,52 @@ const upload = multer({
 
 // get a list of itineraries from the database
 router.get("/:city", (req, res) => {
+  console.log(req.params);
   itineraryModel
     .find({ cityName: req.params.city })
     .then(itinerary => res.json(itinerary));
 });
 
+// add a new itinerary to the database
 router.post("/", upload.single("profileImage"), (req, res, next) => {
   console.log(req.file);
+  req.body.profileImage = req.file.path;
+
+  /*const itinerary = new Itinerary({
+  profileImage: req.file.path,
+  profileName: req.body.profileName,
+  title: req.body.title,
+  rating: req.body.rating,
+  hours: req.body.hours,
+  cost: req.body.cost,
+  cityName: req.body.cityName,
+  }
+  */
   itineraryModel
     .create(req.body)
     .then(itinerary => res.send(itinerary))
+    .catch(next);
+});
+
+router.put("/:id", (req, res, next) => {
+  itineraryModel
+    .findByIdAndUpdate({ _id: req.params.id }, req.body)
+    .then(function() {
+      itineraryModel
+        .findOne({ _id: req.params.id })
+        .then(function(itinerary) {
+          res.send(itinerary);
+        })
+        .catch(next);
+    });
+});
+
+router.delete("/:id", (req, res, next) => {
+  itineraryModel
+    .findByIdAndRemove({ _id: req.params.id })
+    .then(function(itinerary) {
+      res.send(itinerary);
+    })
     .catch(next);
 });
 
