@@ -20,8 +20,8 @@ export class Itinerary extends Component {
   render() {
     return (
       <div>
-        <h3>{this.props.match.params.city}</h3>
-        <h3>Available MYtineraries:</h3>
+        <h2 className="city-name">{this.props.match.params.city}</h2>
+        <h3 className="itinerariesList-title">Available MYtineraries:</h3>
         <div className="itinerariesList">
           {this.props.itineraries.map(itinerary => (
             <ItineraryDetails key={itinerary._id} itinerary={itinerary} />

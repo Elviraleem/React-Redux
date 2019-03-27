@@ -188,8 +188,50 @@ input {
 .itinerariesList {
   padding: 20px;
 }
+h3.itinerariesList-title {
+  text-align: center;
+}
 
 .profile .card-image {
   width: 80px;
   border-radius: 40px;
+}
+.profile-container {
+  margin-top: 20px;
+}
+.city-name {
+  text-align: center;
+}
+.profile-content {
+  display: flex;
+  justify-content: space-around;
+  border-top-style: outset;
+  border-top-color: #ebebeb;
+  border-radius: 20px;
+  padding: 20px;
+}
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.itinerary-info {
+  width: 55%;
+}
+.profileTitle h3 {
+  margin: 0;
+}
+.profile-details {
+  display: flex;
+  justify-content: space-between;
+}
+.hashtags p {
+  margin: 0px;
+}
+button {
+  width: 100%;
+  margin: 20px 0px;
+  height: 30px;
+  background-color: #ececec;
+  border-radius: 8px;
 }

@@ -59,9 +59,9 @@ router.post("/", upload.single("profileImage"), (req, res, next) => {
     .catch(next);
 });
 
-router.put("/:id", (req, res, next) => {
+router.put("/:id", upload.single("activityImages"), (req, res, next) => {
   itineraryModel
-    .findByIdAndUpdate({ _id: req.params.id }, req.body)
+    .findByIdAndUpdate({ _id: req.params.id }, req.body, req.file.path)
     .then(function() {
       itineraryModel
         .findOne({ _id: req.params.id })
