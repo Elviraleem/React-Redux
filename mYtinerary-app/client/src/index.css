@@ -73,6 +73,9 @@ code {
 .logo-home img {
   width: 15%;
 }
+span.MuiButton-label-2 {
+  justify-content: flex-start;
+}
 
 .svg-inline--fa {
   font-size: 50px;

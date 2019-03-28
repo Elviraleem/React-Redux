@@ -15,7 +15,7 @@ const ActivitySchema = new Schema({
     type: String
   },
   itinerary_id: {
-    type: Object
+    type: String
   }
 });
 
