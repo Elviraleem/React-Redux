@@ -2,6 +2,7 @@ let express = require("express");
 let mongoose = require("mongoose");
 const cityRoute = require("./routes/api/cityRoute");
 const itineraryRoute = require("./routes/api/itineraryRoute");
+const activityRoute = require("./routes/api/activityRoute");
 const bodyParser = require("body-parser");
 
 var app = express();
@@ -27,6 +28,7 @@ app.use(bodyParser.json());
 // Middleware which initialize the routes
 app.use("/cities", cityRoute);
 app.use("/itineraries", itineraryRoute);
+app.use("/activities", activityRoute);
 // error handling middleware.
 app.use("/Cities/uploads", express.static("uploads"));
 app.use(function(err, req, res, next) {

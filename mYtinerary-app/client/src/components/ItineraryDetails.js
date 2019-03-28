@@ -29,6 +29,7 @@ const ItineraryDetails = props => {
           </div>
         </div>
       </div>
+      {/* <Toggle itinerary={itinerary._id} /> */}
       <Toggle />
     </div>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import Activity from "./Activity";
 
 export default class Toggle extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class Toggle extends React.Component {
     const textValue = isOpened ? "Close" : "View";
     return (
       <div>
-        {this.state.isOpened && <h3>Activities:</h3>}
+        {this.state.isOpened && <Activity />}
         <button onClick={this.toggle}>{textValue}</button>
       </div>
     );
