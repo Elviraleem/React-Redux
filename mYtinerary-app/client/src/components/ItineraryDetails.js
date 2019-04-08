@@ -1,8 +1,8 @@
 import React from "react";
-import Toggle from "./Toggle";
 
 const ItineraryDetails = props => {
   console.log(props);
+  console.log(props.itinerary);
 
   return (
     <div className="profile-container">
@@ -29,8 +29,7 @@ const ItineraryDetails = props => {
           </div>
         </div>
       </div>
-      {/* <Toggle itinerary={itinerary._id} /> */}
-      <Toggle />
+      {/* <Activity itinerary={props.itinerary._id} /> */}
     </div>
   );
 };

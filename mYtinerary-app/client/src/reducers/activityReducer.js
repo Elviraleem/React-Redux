@@ -1,4 +1,4 @@
-import { FETCH_ACTIVITY } from "../actions/activitiesAction";
+import { FETCH_ACTIVITY } from "../actions/activityAction";
 
 const initialState = {
   activities: []

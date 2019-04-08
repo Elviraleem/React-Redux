@@ -5,7 +5,7 @@ export const FETCH_ACTIVITY = "FETCH_ACTIVITY";
 export const fetchActivities = itinerariesId => dispatch => {
   console.log("fetchActivities actions", itinerariesId);
   axios
-    .get("/activities/" + id)
+    .get("/activities/" + itinerariesId)
     .then(res => {
       console.log(res.data);
       dispatch({

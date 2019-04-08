@@ -19,7 +19,7 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .logo-title img {
@@ -178,6 +178,7 @@ a:-webkit-any-link {
   display: flex;
   justify-content: center;
   padding: 15px;
+  margin-top: 45px;
 }
 input {
   border: 2px solid #00000066;
@@ -237,4 +238,48 @@ button {
   height: 30px;
   background-color: #ececec;
   border-radius: 8px;
+}
+.activity-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.activity-content {
+  display: flex;
+  justify-content: center;
+}
+.activity-content h3 {
+  margin-top: 10px;
+}
+.activity-content h2 {
+  margin: 0px;
+}
+
+.slick-slider.slick-initialized {
+  width: 90%;
+}
+
+.activity-img img {
+  height: 250px;
+  width: 100%;
+}
+.slick-slider .slick-list {
+  margin-bottom: 10px;
+}
+button.closed-btn {
+  align-self: center;
+  width: 90%;
+}
+button.slick-arrow.slick-next::before,
+button.slick-arrow.slick-prev::before {
+  color: black;
+}
+
+.slick-next {
+  right: 10px;
+  z-index: 3;
+}
+.slick-prev {
+  left: 0px;
+  z-index: 3;
 }

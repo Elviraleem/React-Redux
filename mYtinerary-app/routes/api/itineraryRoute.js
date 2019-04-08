@@ -32,7 +32,7 @@ const upload = multer({
 
 // get a list of itineraries from the database
 router.get("/:city", (req, res) => {
-  console.log(req.params);
+  console.log("itineraryRoute", req.params);
   itineraryModel
     .find({ cityName: req.params.city })
     .then(itinerary => res.json(itinerary));
